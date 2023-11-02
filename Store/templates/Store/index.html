@@ -10,12 +10,11 @@
 <body>
     <h1>Welcome to the Konga Home Page</h1>
     <div>
-        <ol>
-            <li>red</li>
-            <li>yead</li>
-            <li>fly</li>
-            <li>slow</li>
-        </ol>
+        {% for product in all_products %}
+        <h2><a href="{%url 'detail' product.id %}">{{product.name}}</a></h2> <h3><a href="{%url 'detail' product.id %}">{{product.price}}</a></h3>
+        <img src="{{product.image.url}} " width="200px" height="200px" alt="{{product.name}}">
+        <br>
+        {%endfor%}
     </div>
 </body>
 </html>
